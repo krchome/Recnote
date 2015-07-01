@@ -1,0 +1,85 @@
+﻿@model RecNote.WebApp.Models.Service
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+@if (@Model.ApplicationUser_Id == ViewBag.UserID)
+{
+    <div>
+        <h4>Contact</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.TypeOfService)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TypeOfService)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.AccountNumber)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.AccountNumber)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.AccountName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.AccountName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Address)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Address)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.InvoiceAmount)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.InvoiceAmount)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.InvoiceDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.InvoiceDate)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PayeeBank)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PayeeBank)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PaymentMethod)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PaymentMethod)
+            </dd>
+
+        </dl>
+    </div>
+}
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ServiceId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>

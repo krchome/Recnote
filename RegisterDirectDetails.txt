@@ -1,0 +1,48 @@
+Your Unique Domain Authentication ID (UDAI) for this domain name is:
+   UDAI: CF7Ud9PU
+
+The Unique Domain Authentication Identification (UDAI) is required to enable
+a transfer of your domain name from one registrar to another. If you are
+asked to provide the UDAI for anything other than this you should query the
+request. With the introduction of .nz registrations at the second level some
+registrants will require the UDAI as part of their Preferential Registration
+Eligibility.
+
+The provided UDAI will expire in 30 days of the date of this email, or when
+a transfer is initiated, whichever comes first.
+
+Make the most of your domain name registration by logging into your account at
+RegisterDIRECT and enable many of our free services including POP3/IMAP accounts,
+Mail Forwarding and URL Redirection.
+
+https://www.registerdirect.co.nz/client/login.html
+
+
+[Registrant Access Details]
+
+Account ID: 95102820
+Password: 23081f
+
+
+Azure:
+
+IP address : 104.210.92.71
+
+
+Manage custom domains
+
+You can point custom domain names to your Windows Azure websites. Windows Azure must verify that you are authorized to configure the custom domain name to point to your Windows Azure website. To verify authorization, create a CNAME resource record with your DNS provider that points from either www.yourdomain.com to RecNoteWebApp.azurewebsites.net, or from awverify.www.yourdomain.com to awverify.RecNoteWebApp.azurewebsites.net. When using Traffic Manager, create a CNAME resource record with your DNS provider that points to the *.trafficmanager.net URL.
+
+Learn more about managing custom domains
+
+Help for domain name list
+DOMAIN NAMES
+		
+		
+Help for IP Address
+THE IP ADDRESS TO USE WHEN YOU CONFIGURE A RECORDS
+104.210.92.71
+
+
+02­0208­0078149­000
+

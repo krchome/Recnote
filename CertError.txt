@@ -1,0 +1,43 @@
+
+
+
+
+http://ccm.net/forum/affich-527783-internet-explorer-certificate-error _ this worked for me
+
+
+Try this 1 
+
+1)click on "Tools" menu--> Internet Options
+
+"Internet Options" window will be opened. Click on "Advanced" tab. 
+
+Scroll down to the "Security" section. Under security section, uncheck the 
+
+check boxes for "Check for publisher's certificate revocation" and "Check for 
+
+server certificate revocation", now look for the options "Warn about certificate 
+
+address mismatch & Warn if changing between secure and not secure mode" 
+
+and uncheck those options also --> Click on "Apply" button. 
+
+Now try to open that website. If the problem still exists then follow the next step 
+
+2) If you find the option regarding installation of certificates then install the
+
+certificates related to that site. 
+
+3) Add that website to "Trusted Sites". 
+
+Right-click on the "Internet Explorer" icon --> Properties ---> Click on "Security" 
+
+tab--->Select "Trusted Sites" --> Click on "Sites" button --> Add your website url 
+
+in the text box (Example: http://www.example.com) and click on "Add" button --> 
+
+Uncheck the option "Require server verification (https:) for all sites zones in this 
+
+zone" and click on OK. 
+
+
+https://github.com/krchome/Recnote.git
