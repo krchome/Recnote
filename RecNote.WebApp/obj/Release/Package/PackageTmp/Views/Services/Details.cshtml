@@ -1,16 +1,13 @@
 ﻿@model RecNote.WebApp.Models.Service
 
-@{
-    ViewBag.Title = "Details";
-}
 
-<h2>Details</h2>
+<br />
+<h4>Details</h4>
 
 @if (@Model.ApplicationUser_Id == ViewBag.UserID)
 {
     <div>
-        <h4>Contact</h4>
-        <hr />
+        
         <dl class="dl-horizontal">
             <dt>
                 @Html.DisplayNameFor(model => model.TypeOfService)
