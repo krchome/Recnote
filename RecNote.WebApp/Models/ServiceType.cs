@@ -14,7 +14,7 @@ namespace RecNote.WebApp.Models
 
         public string ServiceTypeDescription { get; set; }
 
-
+        public virtual ICollection<Service> Services { get; set; }
 
          //public IQueryable<ServiceType> GetServiceType()
          //   {

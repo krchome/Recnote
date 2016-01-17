@@ -1,4 +1,5 @@
-﻿@model IEnumerable<RecNote.WebApp.Models.Service>
+﻿@model IEnumerable<RecNote.WebApp.Models.IndexListView>
+
 
 
 <!DOCTYPE html>
@@ -6,158 +7,90 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+    <br />
+    <br />
+    <title style="font-size:medium">Index</title>
 </head>
 <body>
     <p>
         @Html.ActionLink("Create New", "Create")
     </p>
-    <div class="container">
-        <div class="table-responsive">
-            <table class="table table-striped">
-                <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.ServiceTypeId)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.AccountNumber)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.AccountName)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Address)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.InvoiceAmount)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.InvoiceDate)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.PayeeBank)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.PaymentMethod)
-                    </th>
-                    <th></th>
-                </tr>
-
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        @if (item.ApplicationUser_Id == ViewBag.UserID)
-                        {
-                            <td>
-                                @Html.DisplayFor(modelItem => item.ServiceTypeId)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.AccountNumber)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.AccountName)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Address)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.InvoiceAmount)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.InvoiceDate)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.PayeeBank)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.PaymentMethod)
-                            </td>
-                            <td>
-                                @Html.ActionLink("Edit", "Edit", new { id = item.ServiceId }) |
-                                @Html.ActionLink("Details", "Details", new { id = item.ServiceId }) |
-                                @Html.ActionLink("Delete", "Delete", new { id = item.ServiceId })
-                            </td>
-                        }
-                    </tr>
-                }
-
-            </table>
-        </div>
-    </div>
+    <table class="table">
+        <tr>
+            @*<th>
+                @Html.DisplayNameFor(model => model.ApplicationUser_Id)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceTypeDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AccountNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AccountName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InvoiceAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InvoiceDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PayeeBank)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PaymentMethod)
+            </th>
+           
+            <th></th>
+        </tr>
     
-    @*<div class="container">
-            <h2>Table</h2>
-            <p>The .table-striped class adds zebra-striping to any table row within tbody (not available in IE8):</p>
-            <table class="table table-striped">
-                   <thead>
-                    <tr>
-                        <th>
-                            @Html.DisplayNameFor(model => model.ServiceTypeId)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.AccountNumber)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.AccountName)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Address)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.InvoiceAmount)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.InvoiceDate)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.PayeeBank)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.PaymentMethod)
-                        </th>
-                    </tr>
-                  </thead>
-                    @foreach (var item in Model)
-                    {
-                        <tbody>
-                            <tr>
-                                @if (item.ApplicationUser_Id == ViewBag.UserID)
-                            {
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.ServiceTypeId)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.AccountNumber)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.AccountName)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Address)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.InvoiceAmount)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.InvoiceDate)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.PayeeBank)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.PaymentMethod)
-                                    </td>
-                                    <td>
-                                        @Html.ActionLink("Edit", "Edit", new { id = item.ServiceId }) |
-                                        @Html.ActionLink("Details", "Details", new { id = item.ServiceId }) |
-                                        @Html.ActionLink("Delete", "Delete", new { id = item.ServiceId })
-                                    </td>
-                            }
-                            </tr>
-                            </tbody>
-                            }
+    @foreach (var item in Model) {
+        <tr>
+            @if (item.ApplicationUser_Id == ViewBag.UserID)
+            {
+            @*<td>
+                @Html.DisplayFor(modelItem => item.ApplicationUser_Id)
+            </td>*@
 
-            </table>
-        </div>*@
-    </body>
-    </html>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceTypeDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccountNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccountName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InvoiceAmount)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.InvoiceDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PayeeBank)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaymentMethod)
+            </td>
+            
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item.ServiceId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.ServiceId }) |
+                @Html.ActionLink("Delete", "Delete", new {  id=item.ServiceId })
+            </td>
+            }
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

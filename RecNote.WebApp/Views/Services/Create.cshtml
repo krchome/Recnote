@@ -1,17 +1,14 @@
 ﻿@model RecNote.WebApp.Models.Service
 
-@{
-    ViewBag.Title = "Create";
-}
 
-<h2>Create</h2>
-    
     @using (Html.BeginForm()) 
     {
         @Html.AntiForgeryToken()
         
         <div class="form-horizontal">
-            <h4>Service</h4>
+            <br />
+            <br />
+            <h4>Create</h4>
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             @Html.HiddenFor(model => model.ServiceId)
@@ -23,6 +20,8 @@
                 @*     @Html.DropDownList("ServiceTypeId")*@
                     @Html.DropDownListFor(m=>m.ServiceTypeId, Model.ServiceDescription)
                     @Html.ValidationMessageFor(model => model.ServiceTypeId)
+
+                    
                 </div>
             </div>
     

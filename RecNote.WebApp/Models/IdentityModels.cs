@@ -35,5 +35,15 @@ namespace RecNote.WebApp.Models
         public System.Data.Entity.DbSet<RecNote.WebApp.Models.Service> Services { get; set; }
 
        public System.Data.Entity.DbSet<RecNote.WebApp.Models.ServiceType> ServiceTypes { get; set; }
+
+       public System.Data.Entity.DbSet<RecNote.WebApp.Models.Maintenance> Maintenances { get; set; }
+
+       public System.Data.Entity.DbSet<RecNote.WebApp.Models.MaintenanceType> MaintenanceTypes { get; set; }
+
+       public System.Data.Entity.DbSet<RecNote.WebApp.Models.Insurance> Insurances { get; set; }
+
+       public System.Data.Entity.DbSet<RecNote.WebApp.Models.InsuranceType> InsuranceTypes { get; set; }
+
+       //public System.Data.Entity.DbSet<RecNote.WebApp.Models.ServiceViewModel> ServiceViewModels { get; set; }
     }
 }

@@ -43,6 +43,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -159,7 +161,15 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\ContactsController.cs" />
+    <Compile Include="Controllers\InsurancesController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\InsuranceTypesController.cs" />
     <Compile Include="Controllers\LegalController.cs" />
+    <Compile Include="Controllers\MaintenancesController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\MaintenanceTypesController.cs" />
     <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="Controllers\ServiceTypesController.cs" />
     <Compile Include="Migrations\201506220143341_initial.cs" />
@@ -169,6 +179,66 @@
     <Compile Include="Migrations\201506270636181_initial9.cs" />
     <Compile Include="Migrations\201506270636181_initial9.Designer.cs">
       <DependentUpon>201506270636181_initial9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507111131116_initial1.cs" />
+    <Compile Include="Migrations\201507111131116_initial1.Designer.cs">
+      <DependentUpon>201507111131116_initial1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507111202306_initial2.cs" />
+    <Compile Include="Migrations\201507111202306_initial2.Designer.cs">
+      <DependentUpon>201507111202306_initial2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507120427323_initial3.cs" />
+    <Compile Include="Migrations\201507120427323_initial3.Designer.cs">
+      <DependentUpon>201507120427323_initial3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507120946024_initial4.cs" />
+    <Compile Include="Migrations\201507120946024_initial4.Designer.cs">
+      <DependentUpon>201507120946024_initial4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507120950543_initial5.cs" />
+    <Compile Include="Migrations\201507120950543_initial5.Designer.cs">
+      <DependentUpon>201507120950543_initial5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507142026458_initial6.cs" />
+    <Compile Include="Migrations\201507142026458_initial6.Designer.cs">
+      <DependentUpon>201507142026458_initial6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507142213434_initial7.cs" />
+    <Compile Include="Migrations\201507142213434_initial7.Designer.cs">
+      <DependentUpon>201507142213434_initial7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507142325291_initial8.cs" />
+    <Compile Include="Migrations\201507142325291_initial8.Designer.cs">
+      <DependentUpon>201507142325291_initial8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507180403413_initial10.cs" />
+    <Compile Include="Migrations\201507180403413_initial10.Designer.cs">
+      <DependentUpon>201507180403413_initial10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507180427028_initial11.cs" />
+    <Compile Include="Migrations\201507180427028_initial11.Designer.cs">
+      <DependentUpon>201507180427028_initial11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507190702192_initial12.cs" />
+    <Compile Include="Migrations\201507190702192_initial12.Designer.cs">
+      <DependentUpon>201507190702192_initial12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507190905511_initial13.cs" />
+    <Compile Include="Migrations\201507190905511_initial13.Designer.cs">
+      <DependentUpon>201507190905511_initial13.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507220759525_initial14.cs" />
+    <Compile Include="Migrations\201507220759525_initial14.Designer.cs">
+      <DependentUpon>201507220759525_initial14.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507251122141_initial15.cs" />
+    <Compile Include="Migrations\201507251122141_initial15.Designer.cs">
+      <DependentUpon>201507251122141_initial15.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601130043561_RecNote.WebApp.Models.ApplicationDbContext.cs" />
+    <Compile Include="Migrations\201601130043561_RecNote.WebApp.Models.ApplicationDbContext.Designer.cs">
+      <DependentUpon>201601130043561_RecNote.WebApp.Models.ApplicationDbContext.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Contact.cs" />
@@ -180,27 +250,124 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\IndexListView.cs">
+      <DependentUpon>ServiceDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IndexListViewExtended.cs" />
+    <Compile Include="Models\IndexViewModel.cs" />
+    <Compile Include="Models\Insurance.cs" />
+    <Compile Include="Models\InsuranceType.cs" />
+    <Compile Include="Models\Maintenance.cs" />
+    <Compile Include="Models\MaintenanceDBModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MaintenanceDBModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MaintenanceDBModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MaintenanceDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MaintenanceDBModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MaintenanceDBModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MaintenanceListView.cs">
+      <DependentUpon>MaintenanceDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MaintenanceType.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Service.cs" />
+    <Compile Include="Models\ServiceDBModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ServiceDBModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ServiceDBModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ServiceDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ServiceDBModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ServiceDBModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\ServiceType.cs" />
-    <Compile Include="Models\ServiceTypeViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-RecNote.WebApp-20150622011214.mdf" />
+    <Content Include="App_Data\aspnet-RecNote.WebApp-20150622011214_log.ldf">
+      <DependentUpon>aspnet-RecNote.WebApp-20150622011214.mdf</DependentUpon>
+    </Content>
+    <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\ajax-loader.gif" />
+    <Content Include="Content\images\ajax-loader.png" />
+    <Content Include="Content\images\background.jpg" />
+    <Content Include="Content\images\background2.jpg" />
+    <Content Include="Content\images\background3.jpg" />
+    <Content Include="Content\images\icons-18-black.png" />
+    <Content Include="Content\images\icons-18-white.png" />
+    <Content Include="Content\images\icons-36-black.png" />
+    <Content Include="Content\images\icons-36-white.png" />
+    <Content Include="Content\jquery.mobile-1.1.0.css" />
+    <Content Include="Content\jquery.mobile-1.1.0.min.css" />
+    <Content Include="Content\jquery.mobile.structure-1.1.0.css" />
+    <Content Include="Content\jquery.mobile.structure-1.1.0.min.css" />
+    <Content Include="Content\jquery.mobile.theme-1.1.0.css" />
+    <Content Include="Content\jquery.mobile.theme-1.1.0.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\ServiceDBModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ServiceDBModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ServiceDBModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ServiceDBModel.edmx</DependentUpon>
+      <LastGenOutput>ServiceDBModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ServiceDBModel.edmx.diagram">
+      <DependentUpon>ServiceDBModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\ServiceDBModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ServiceDBModel.edmx</DependentUpon>
+      <LastGenOutput>ServiceDBModel.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="Models\MaintenanceDBModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MaintenanceDBModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\MaintenanceDBModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MaintenanceDBModel.edmx</DependentUpon>
+      <LastGenOutput>MaintenanceDBModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\MaintenanceDBModel.edmx.diagram">
+      <DependentUpon>MaintenanceDBModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\MaintenanceDBModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MaintenanceDBModel.edmx</DependentUpon>
+      <LastGenOutput>MaintenanceDBModel.cs</LastGenOutput>
+    </Content>
     <None Include="Properties\PublishProfiles\RecNoteWebApp.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.mobile-1.1.0.js" />
+    <Content Include="Scripts\jquery.mobile-1.1.0.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -209,7 +376,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -222,7 +391,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -254,16 +422,36 @@
     <Content Include="Views\Services\Delete.cshtml" />
     <Content Include="Views\Services\Details.cshtml" />
     <Content Include="Views\Services\Edit.cshtml" />
-    <Content Include="Views\Services\Index.cshtml" />
     <Content Include="Views\Legal\TermsAndConditions.cshtml" />
     <Content Include="Views\ServiceTypes\Create.cshtml" />
     <Content Include="Views\ServiceTypes\Delete.cshtml" />
     <Content Include="Views\ServiceTypes\Details.cshtml" />
     <Content Include="Views\ServiceTypes\Edit.cshtml" />
     <Content Include="Views\ServiceTypes\Index.cshtml" />
+    <Content Include="Views\Insurances\Index.cshtml" />
+    <Content Include="Views\Maintenances\Index.cshtml" />
+    <Content Include="Views\Services\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Maintenances\Create.cshtml" />
+    <Content Include="Views\Maintenances\Delete.cshtml" />
+    <Content Include="Views\Maintenances\Details.cshtml" />
+    <Content Include="Views\Maintenances\Edit.cshtml" />
+    <Content Include="Views\MaintenanceTypes\Create.cshtml" />
+    <Content Include="Views\MaintenanceTypes\Delete.cshtml" />
+    <Content Include="Views\MaintenanceTypes\Details.cshtml" />
+    <Content Include="Views\MaintenanceTypes\Edit.cshtml" />
+    <Content Include="Views\MaintenanceTypes\Index.cshtml" />
+    <Content Include="Views\Insurances\Create.cshtml" />
+    <Content Include="Views\Insurances\Delete.cshtml" />
+    <Content Include="Views\Insurances\Details.cshtml" />
+    <Content Include="Views\Insurances\Edit.cshtml" />
+    <Content Include="Views\InsuranceTypes\Create.cshtml" />
+    <Content Include="Views\InsuranceTypes\Delete.cshtml" />
+    <Content Include="Views\InsuranceTypes\Details.cshtml" />
+    <Content Include="Views\InsuranceTypes\Edit.cshtml" />
+    <Content Include="Views\InsuranceTypes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>
@@ -280,6 +468,54 @@
     <EmbeddedResource Include="Migrations\201506270636181_initial9.resx">
       <DependentUpon>201506270636181_initial9.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507111131116_initial1.resx">
+      <DependentUpon>201507111131116_initial1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507111202306_initial2.resx">
+      <DependentUpon>201507111202306_initial2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507120427323_initial3.resx">
+      <DependentUpon>201507120427323_initial3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507120946024_initial4.resx">
+      <DependentUpon>201507120946024_initial4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507120950543_initial5.resx">
+      <DependentUpon>201507120950543_initial5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507142026458_initial6.resx">
+      <DependentUpon>201507142026458_initial6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507142213434_initial7.resx">
+      <DependentUpon>201507142213434_initial7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507142325291_initial8.resx">
+      <DependentUpon>201507142325291_initial8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507180403413_initial10.resx">
+      <DependentUpon>201507180403413_initial10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507180427028_initial11.resx">
+      <DependentUpon>201507180427028_initial11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507190702192_initial12.resx">
+      <DependentUpon>201507190702192_initial12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507190905511_initial13.resx">
+      <DependentUpon>201507190905511_initial13.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507220759525_initial14.resx">
+      <DependentUpon>201507220759525_initial14.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507251122141_initial15.resx">
+      <DependentUpon>201507251122141_initial15.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601130043561_RecNote.WebApp.Models.ApplicationDbContext.resx">
+      <DependentUpon>201601130043561_RecNote.WebApp.Models.ApplicationDbContext.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

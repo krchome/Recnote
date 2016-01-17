@@ -11,6 +11,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Recnote.WebApp.Models;
+//using Recnote.WebApp.Models;
 
 
 namespace RecNote.WebApp.Controllers
@@ -18,6 +19,15 @@ namespace RecNote.WebApp.Controllers
     public class ServicesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+
+        Entities _db;
+
+        public ServicesController()
+        {
+            _db = new Entities();
+        }
+
+      //  private ServiceContext scdb = new ServiceContext();
 
         private ApplicationUserManager _userManager;
 
@@ -37,9 +47,10 @@ namespace RecNote.WebApp.Controllers
         public ActionResult Index()
         {
             ViewBag.UserID = User.Identity.GetUserId();
-            //Service services =(Service) db.Services.ToList();
+            ViewData.Model = _db.IndexListViews.ToList();
 
-            return View(db.Services.ToList());
+            return View();
+            //return View(service);
         }
 
         private IEnumerable<SelectListItem> GetTypeOfService()
@@ -58,28 +69,7 @@ namespace RecNote.WebApp.Controllers
 
         private string GetDescription(int? id)
         {
-            var serviceTypes = new Service();
-            string type = serviceTypes.GetServiceType()
-                        .Select(x =>
-                                new SelectListItem
-                                {
-                                    Value = x.ServiceTypeId.ToString(),
-                                    Text = x.ServiceTypeDescription
-                                }).FirstOrDefault().Text;
-
-
-            //string query_where2 = from a in db.Services
-            //       // where a.Name.Contains("Contoso")
-            //        where a.ServiceId == id
-            //        select (a.ServiceTypeId).ToString();
-            ////string  servtyp = db.Services.Select(x=>
-            ////      new SelectListItem
-            ////                    {
-            ////                        Value = x.ServiceTypeId.ToString(),
-            ////                        Text = x.TypeOfService
-            ////                    }).Where(x=>x.Value = id)
-
-            //return query_where2.First().ToString();
+          
             string type1 = "";
             var query = from c in db.Services
                         join a in db.ServiceTypes
@@ -100,6 +90,31 @@ namespace RecNote.WebApp.Controllers
             return type1;
 
         }
+
+        // Following code is being tested for Edit view 
+        private IEnumerable<SelectListItem> GetDescriptionForEdit(int? id)
+        {
+            //string type1 = "";
+            var query = from c in db.Services
+                        join a in db.ServiceTypes
+                        on c.ServiceTypeId equals a.ServiceTypeId
+                        where c.ServiceId == id
+                        select new
+                        {
+                            Value = a.ServiceTypeId.ToString(),
+                            Text = a.ServiceTypeDescription.ToString()
+                            
+
+                        };
+
+            //foreach (var c in query)
+            //{
+            //    type1 = c.type;
+            //}
+
+            return new SelectList(query, "Value", "Text");
+        }
+
 
         Service FindService(int? id)
         {
@@ -178,27 +193,125 @@ namespace RecNote.WebApp.Controllers
         // GET: Services/Edit/5
         public ActionResult Edit(int? id)
         {
+            //old code 
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-           Service service = FindService(id);
+            Service service = FindService(id);
 
-           if (service.TypeOfService == null)
-           {
+            if (service.TypeOfService == null)
+            {
 
-               service.TypeOfService = GetDescription(id);
+                service.TypeOfService = GetDescription(id);
 
-           }
-        
+            }
+
             if (service == null)
             {
                 return HttpNotFound();
             }
-            //   ViewBag.ServiceTypeId = new SelectList(db.ServiceTypes, "ServiceTypeId", "Service Type", service.ServiceTypeId);
-           // service.ServiceDescription = <IEnumerable><string>service;
-            return View(service);
+            //ServiceDescriptionEditView
+            //==========Following block of code is being commented to try something new ========//
 
+            var model = new Service()
+            {
+                ServiceDescriptionEditView = GetDescriptionForEdit(id),
+
+
+            };
+
+
+            service.ServiceDescriptionEditView = model.ServiceDescriptionEditView;
+            return View(service);
+            //======================================================//
+            //var model = new EditIndexViewModel();
+
+            //if (id == null)
+            //{
+            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            //}
+            //var model1 = new Service()
+            //{
+            //    ServiceDescription = GetDataEditSelectList(id)
+
+            //};
+           // var model = GetDataEditSelectList(id);
+           // var model = new IndexListView()
+           // {
+             //   ServiceDescription = GetDataEditSelectList(id)
+           // };
+            //ViewData.Model = _db.IndexListViews.ToList();
+            //return ViewData();
+            //var model1 = new IndexListView();
+            //model1.ServiceDescription = GetDataEditSelectList(id);
+            ////model.Add(model1);
+
+            //model = (_db.IndexListViews.ToList());
+            //{
+            //    ServiceDescription = GetDataEditSelectList(id);
+            //}
+
+            //var model = new IndexListView()
+            //{
+            //    ServiceDescription = GetDataEditSelectList(id)
+            //};
+
+            //var model = new  
+            //{
+            //    ServiceDescription = GetDataEditSelectList(id)
+            //};
+            //return View(model);
+            
+           // }
+
+           
+        }
+
+        private IEnumerable<SelectListItem> GetDataEditSelectList(int? id)
+        {
+            var model = _db.IndexListViews.ToList();
+
+            //if (id != null)
+            //{
+            //    model.Single(x => x.ServiceId == id);
+            //    _db.IndexListViews.ToList().Select(x => new SelectListItem
+            //    {
+            //        Value = x.ServiceTypeId.ToString(),
+            //        Text = x.ServiceTypeDescription
+            //    });
+            //}
+
+            var query = from a in _db.IndexListViews
+                        //join a in db.ServiceTypes
+                        //on c.ServiceTypeId equals a.ServiceTypeId
+                        where a.ServiceId == id
+                        select new
+                        {
+                            Value = a.ServiceTypeId.ToString(),
+                            Text = a.ServiceTypeDescription.ToString()
+
+
+                        };
+
+            //foreach (var c in query)
+            //{
+            //    type1 = c.type;
+            //}
+
+            //var serviceTypes = db.Services;
+            //var roles = db.Services.
+            //            Select(x =>
+            //                    new SelectListItem
+            //                    {
+            //                        Value = x.ServiceTypeId.ToString(),
+            //                        Text = x.ServiceDescription.ToString()
+            //                    });
+
+            
+
+            return new SelectList(query, "Value", "Text");
+            //return ;
         }
 
         // POST: Services/Edit/5
@@ -221,7 +334,20 @@ namespace RecNote.WebApp.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            //ViewBag.ServiceTypeId = new SelectList(scdb.ServiceTypes, "ServiceTypeId", "ServiceTypeDescription", service.ServiceTypeId);//new code
             return View(service);
+
+            //
+        //    model.CandidatesList = serviceCandidate
+        //.GetCandidates()
+        //.Select(x => new SelectListItem
+        //{
+        //    Text = x.Nominative,
+        //    Value = x.CandidateId.ToString()
+        //});
+
+        //    return View(model);
+            //
         }
 
         // GET: Services/Delete/5

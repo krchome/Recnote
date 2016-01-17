@@ -15,10 +15,12 @@ namespace RecNote.WebApp.Models
 
         public int ServiceTypeId { get;  set; }
 
-        public  ServiceType servicetype { get; set; }
+        public   ServiceType servicetype { get; set; }
         //public IEnumerable<SelectListItem> UserRoles { get; set; }
 
         public IEnumerable<SelectListItem> ServiceDescription { get; set; }
+
+        public IEnumerable<SelectListItem> ServiceDescriptionEditView { get; set; }
 
         public string TypeOfService { get; set; }
         public string ApplicationUser_Id { get; set; }
