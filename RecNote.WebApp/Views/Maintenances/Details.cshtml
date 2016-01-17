@@ -1,0 +1,91 @@
+﻿@model RecNote.WebApp.Models.Maintenance
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+@if (@Model.ApplicationUser_Id == ViewBag.UserID)
+{
+    <div>
+        <h4>Details</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.TypeOfMaintenance)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TypeOfMaintenance)
+            </dd>
+    
+           
+            <dt>
+                @Html.DisplayNameFor(model => model.DetailsOfWork)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DetailsOfWork)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.InvoiceAmount)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.InvoiceAmount)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.InvoiceDetails)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.InvoiceDetails)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Provider)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Provider)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Comments)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Comments)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.DateDone)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DateDone)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.DateDue)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DateDue)
+            </dd>
+    
+        </dl>
+    </div>
+}
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.MaintenanceId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

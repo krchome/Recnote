@@ -1,0 +1,107 @@
+﻿@model IEnumerable<RecNote.WebApp.Models.Insurance>
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <br />
+    <br />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.insurancetype.InsuranceDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PolicyNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PolicyType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InsuredName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PolicyStartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PolicyEndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PremiumAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PaymentType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PaymentMethod)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PayeeBank)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comments)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.insurancetype.InsuranceDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PolicyNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PolicyType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InsuredName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PolicyStartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PolicyEndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PremiumAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaymentType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaymentMethod)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PayeeBank)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comments)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.InsuranceId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.InsuranceId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.InsuranceId })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

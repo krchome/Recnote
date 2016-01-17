@@ -1,0 +1,42 @@
+﻿@model IEnumerable<RecNote.WebApp.Models.InsuranceType>
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <br />
+    <br />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.InsuranceDescription)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.InsuranceDescription)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.InsuranceTypeId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.InsuranceTypeId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.InsuranceTypeId })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

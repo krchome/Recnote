@@ -1,0 +1,42 @@
+﻿@model IEnumerable<RecNote.WebApp.Models.MaintenanceType>
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+   <br />
+    <br />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MaintenanceDescription)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaintenanceDescription)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.MaintenanceTypeId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.MaintenanceTypeId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.MaintenanceTypeId })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

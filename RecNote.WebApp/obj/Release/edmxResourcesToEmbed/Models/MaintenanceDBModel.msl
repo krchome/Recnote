@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MaintenanceDBModelStoreContainer" CdmEntityContainer="MaintenanceEntities">
+    <EntitySetMapping Name="MaintenanceListViews">
+      <EntityTypeMapping TypeName="MaintenanceDBModel.MaintenanceListView">
+        <MappingFragment StoreEntitySet="MaintenanceListView">
+          <ScalarProperty Name="MaintenanceTypeId" ColumnName="MaintenanceTypeId" />
+          <ScalarProperty Name="MaintenanceId" ColumnName="MaintenanceId" />
+          <ScalarProperty Name="ApplicationUser_Id" ColumnName="ApplicationUser_Id" />
+          <ScalarProperty Name="DetailsOfWork" ColumnName="DetailsOfWork" />
+          <ScalarProperty Name="InvoiceAmount" ColumnName="InvoiceAmount" />
+          <ScalarProperty Name="InvoiceDetails" ColumnName="InvoiceDetails" />
+          <ScalarProperty Name="Provider" ColumnName="Provider" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="DateDone" ColumnName="DateDone" />
+          <ScalarProperty Name="DateDue" ColumnName="DateDue" />
+          <ScalarProperty Name="TypeOfMaintenance" ColumnName="TypeOfMaintenance" />
+          <ScalarProperty Name="MaintenanceDescription" ColumnName="MaintenanceDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

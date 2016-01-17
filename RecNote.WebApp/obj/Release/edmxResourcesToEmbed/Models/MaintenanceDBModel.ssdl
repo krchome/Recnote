@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MaintenanceDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'aspnet-RecNote.WebApp-20150622011214.dbo.MaintenanceListView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MaintenanceListView">
+    <Key>
+      <PropertyRef Name="MaintenanceTypeId" />
+      <PropertyRef Name="MaintenanceId" />
+      <PropertyRef Name="DetailsOfWork" />
+      <PropertyRef Name="InvoiceAmount" />
+      <PropertyRef Name="Provider" />
+      <PropertyRef Name="DateDone" />
+      <PropertyRef Name="MaintenanceDescription" />
+    </Key>
+    <Property Name="MaintenanceTypeId" Type="int" Nullable="false" />
+    <Property Name="MaintenanceId" Type="int" Nullable="false" />
+    <Property Name="ApplicationUser_Id" Type="nvarchar(max)" />
+    <Property Name="DetailsOfWork" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="InvoiceAmount" Type="real" Nullable="false" />
+    <Property Name="InvoiceDetails" Type="nvarchar(max)" />
+    <Property Name="Provider" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Comments" Type="nvarchar(max)" />
+    <Property Name="DateDone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DateDue" Type="nvarchar(max)" />
+    <Property Name="TypeOfMaintenance" Type="nvarchar(max)" />
+    <Property Name="MaintenanceDescription" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="MaintenanceDBModelStoreContainer">
+    <EntitySet Name="MaintenanceListView" EntityType="Self.MaintenanceListView" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [MaintenanceListView].[MaintenanceTypeId] AS [MaintenanceTypeId], 
+    [MaintenanceListView].[MaintenanceId] AS [MaintenanceId], 
+    [MaintenanceListView].[ApplicationUser_Id] AS [ApplicationUser_Id], 
+    [MaintenanceListView].[DetailsOfWork] AS [DetailsOfWork], 
+    [MaintenanceListView].[InvoiceAmount] AS [InvoiceAmount], 
+    [MaintenanceListView].[InvoiceDetails] AS [InvoiceDetails], 
+    [MaintenanceListView].[Provider] AS [Provider], 
+    [MaintenanceListView].[Comments] AS [Comments], 
+    [MaintenanceListView].[DateDone] AS [DateDone], 
+    [MaintenanceListView].[DateDue] AS [DateDue], 
+    [MaintenanceListView].[TypeOfMaintenance] AS [TypeOfMaintenance], 
+    [MaintenanceListView].[MaintenanceDescription] AS [MaintenanceDescription]
+    FROM [dbo].[MaintenanceListView] AS [MaintenanceListView]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

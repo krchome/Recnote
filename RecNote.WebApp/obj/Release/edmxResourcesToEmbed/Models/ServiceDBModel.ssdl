@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'aspnet-RecNote.WebApp-20150622011214.dbo.IndexListView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="IndexListView">
+    <Key>
+      <PropertyRef Name="ServiceTypeId" />
+      <PropertyRef Name="ServiceId" />
+      <PropertyRef Name="InvoiceAmount" />
+    </Key>
+    <Property Name="ServiceTypeId" Type="int" Nullable="false" />
+    <Property Name="ServiceId" Type="int" Nullable="false" />
+    <Property Name="ApplicationUser_Id" Type="nvarchar(max)" />
+    <Property Name="AccountNumber" Type="nvarchar(max)" />
+    <Property Name="AccountName" Type="nvarchar(max)" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="InvoiceAmount" Type="real" Nullable="false" />
+    <Property Name="InvoiceDate" Type="nvarchar(max)" />
+    <Property Name="PayeeBank" Type="nvarchar(max)" />
+    <Property Name="PaymentMethod" Type="nvarchar(max)" />
+    <Property Name="ServiceTypeDescription" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="IndexListView" EntityType="Self.IndexListView" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [IndexListView].[ServiceTypeId] AS [ServiceTypeId], 
+    [IndexListView].[ServiceId] AS [ServiceId], 
+    [IndexListView].[ApplicationUser_Id] AS [ApplicationUser_Id], 
+    [IndexListView].[AccountNumber] AS [AccountNumber], 
+    [IndexListView].[AccountName] AS [AccountName], 
+    [IndexListView].[Address] AS [Address], 
+    [IndexListView].[InvoiceAmount] AS [InvoiceAmount], 
+    [IndexListView].[InvoiceDate] AS [InvoiceDate], 
+    [IndexListView].[PayeeBank] AS [PayeeBank], 
+    [IndexListView].[PaymentMethod] AS [PaymentMethod], 
+    [IndexListView].[ServiceTypeDescription] AS [ServiceTypeDescription]
+    FROM [dbo].[IndexListView] AS [IndexListView]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

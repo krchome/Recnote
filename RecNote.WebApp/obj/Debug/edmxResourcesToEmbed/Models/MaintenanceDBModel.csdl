@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MaintenanceDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="MaintenanceListView">
+    <Key>
+      <PropertyRef Name="MaintenanceTypeId" />
+      <PropertyRef Name="MaintenanceId" />
+      <PropertyRef Name="DetailsOfWork" />
+      <PropertyRef Name="InvoiceAmount" />
+      <PropertyRef Name="Provider" />
+      <PropertyRef Name="DateDone" />
+      <PropertyRef Name="MaintenanceDescription" />
+    </Key>
+    <Property Name="MaintenanceTypeId" Type="Int32" Nullable="false" />
+    <Property Name="MaintenanceId" Type="Int32" Nullable="false" />
+    <Property Name="ApplicationUser_Id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DetailsOfWork" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="InvoiceAmount" Type="Single" Nullable="false" />
+    <Property Name="InvoiceDetails" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Provider" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DateDone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DateDue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TypeOfMaintenance" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MaintenanceDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="MaintenanceEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="MaintenanceListViews" EntityType="Self.MaintenanceListView" />
+  </EntityContainer>
+</Schema>
