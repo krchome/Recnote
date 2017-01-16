@@ -13,6 +13,11 @@ namespace RecNote.WebApp.Controllers
         {
             return View();
         }
+
+         RecNote.WebApp.Models.MaintenanceEntities _db;
+
+      
+
         [AllowAnonymous]
         public ActionResult About()
         {

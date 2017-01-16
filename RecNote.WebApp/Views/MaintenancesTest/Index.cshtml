@@ -1,0 +1,81 @@
+﻿@model IEnumerable<RecNote.WebApp.Models.Maintenance>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.maintenancetype.MaintenanceDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApplicationUser_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DetailsOfWork)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InvoiceAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InvoiceDetails)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Provider)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comments)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateDone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateDue)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.maintenancetype.MaintenanceDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApplicationUser_Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DetailsOfWork)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InvoiceAmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InvoiceDetails)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Provider)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comments)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateDone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateDue)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaintenanceId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaintenanceId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaintenanceId })
+        </td>
+    </tr>
+}
+
+</table>

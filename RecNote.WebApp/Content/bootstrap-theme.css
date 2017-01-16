@@ -1104,7 +1104,7 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #93c54b;
+  color: #000000;
   text-decoration: none;
 }
 a:hover,
@@ -6810,7 +6810,7 @@ button.close {
   line-height: 22px;
   font-weight: 700;
   color: black;
- text-transform: uppercase;
+ text-transform:none;
 }
 .navbar-form input,
 .navbar-form .form-control {

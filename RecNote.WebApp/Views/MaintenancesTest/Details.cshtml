@@ -1,0 +1,90 @@
+﻿@model RecNote.WebApp.Models.Maintenance
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Maintenance</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.maintenancetype.MaintenanceDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.maintenancetype.MaintenanceDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicationUser_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicationUser_Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DetailsOfWork)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DetailsOfWork)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InvoiceAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InvoiceAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InvoiceDetails)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InvoiceDetails)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Provider)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Provider)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comments)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateDone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateDone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateDue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateDue)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaintenanceId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

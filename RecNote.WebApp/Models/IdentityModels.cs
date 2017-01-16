@@ -44,6 +44,8 @@ namespace RecNote.WebApp.Models
 
        public System.Data.Entity.DbSet<RecNote.WebApp.Models.InsuranceType> InsuranceTypes { get; set; }
 
+       public System.Data.Entity.DbSet<RecNote.WebApp.Models.IndexListView> IndexListViews { get; set; }
+
        //public System.Data.Entity.DbSet<RecNote.WebApp.Models.ServiceViewModel> ServiceViewModels { get; set; }
     }
 }

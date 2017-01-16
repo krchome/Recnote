@@ -1,0 +1,32 @@
+﻿@model List<RecNote.WebApp.Models.Service>
+@{
+    ViewBag.Title = "ServicesView";
+}
+
+<h2>ServicesView</h2>
+<div id="gridposition" style="overflow: scroll; height: 300px; overflow-x: hidden;">
+    @{
+        var grid1 = new WebGrid(source: Model, canPage: true, rowsPerPage: 5, ajaxUpdateContainerId: "gridContent");
+
+        @grid1.GetHtml(mode: WebGridPagerModes.All, tableStyle: "webGrid",
+            headerStyle: "header",
+            alternatingRowStyle: "alt",
+            selectedRowStyle: "select",
+            rowStyle: "description",
+            htmlAttributes: new { id = "positionGrid" },
+            fillEmptyRows: false,
+
+            columns: grid1.Columns(
+
+             grid1.Column("ServiceId", header: "ServiceId"),
+             grid1.Column("AccountNumber", header: "AccountNumber"),
+             grid1.Column("AccountName", header: "AccountName"),
+             grid1.Column("InvoiceAmount", header: "InvoiceAmount"),
+             grid1.Column("InvoiceDate", header: "InvoiceDate"),
+             grid1.Column("PayeeBank", header: "Bank"),
+             grid1.Column("PaymentMethod", header: "Method"),
+             grid1.Column("TypeOfService", header: "Service")
+             ))
+    }
+</div>
+
